@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] private GameObject Status;
-    [SerializeField] private GameObject Inventory;
-    [SerializeField] private GameObject Main;
+    [SerializeField] private UIStatus uiStatus;
+    [SerializeField] private UIInventory uiInventory;
+    [SerializeField] private UIMainMenu uiMainMenu;
+    public UIMainMenu UIMainMenu => uiMainMenu;
+    public UIStatus UIStatus => uiStatus;
+    public UIInventory UIInventory => uiInventory;
 
 
     void Awake()

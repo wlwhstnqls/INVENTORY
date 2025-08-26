@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class UIStatus : MonoBehaviour
 {
     public Button Back;
-    public GameObject StatusBtn;
-    public GameObject InventoryBtn;
     public GameObject StatusMenu;
+    [SerializeField] private Text Attack;
+    [SerializeField] private Text Defense;
+    [SerializeField] private Text HP;
+    [SerializeField] private Text Critical;
 
-   
+
     void Start()
     {
         Back.onClick.AddListener(OnClickBack);
@@ -18,8 +20,7 @@ public class UIStatus : MonoBehaviour
 
     public void OnClickBack()
     {
-        StatusBtn.SetActive(true);
-        InventoryBtn.SetActive(true);
+        UIManager.instance.UIMainMenu.Buttons.SetActive(true);
         StatusMenu.SetActive(false);
     }
 

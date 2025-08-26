@@ -8,34 +8,31 @@ public class UIMainMenu : MonoBehaviour
 {
     public Button Status;
     public Button Inventory;
-    public GameObject StatusBtn;
-    public GameObject InventoryBtn;
-    public GameObject StatusPanel;
-    public GameObject InventoryPanel;
+    public GameObject Buttons;
+
+    [SerializeField] private Text ID;
+    [SerializeField] private Text Level;
+    [SerializeField] private Text Gold;
+
 
     void Start()
     {
         Status.onClick.AddListener(OnClickStatus);
-        Inventory.onClick.AddListener(OnClickInventory);
-
-        StatusPanel.SetActive(false);
-        InventoryPanel.SetActive(false);
+        Inventory.onClick.AddListener(OnClickInventory);              
     }
 
     public void OnClickStatus()
-    {
-        StatusBtn.SetActive(false);
-        InventoryBtn.SetActive(false);
-        StatusPanel.SetActive(true);          
-        InventoryPanel.SetActive(false);     
+    {        
+        Buttons.SetActive(false);
+        UIManager.instance.UIStatus.StatusMenu.SetActive(true);
+        UIManager.instance.UIInventory.InventoryMenu.SetActive(false);     
     }
 
     public void OnClickInventory()
     {
-        StatusBtn.SetActive(false);
-        InventoryBtn.SetActive(false);
-        StatusPanel.SetActive(false);        
-        InventoryPanel.SetActive(true);       
+        Buttons.SetActive(false);
+        UIManager.instance.UIStatus.StatusMenu.SetActive(false);
+        UIManager.instance.UIInventory.InventoryMenu.SetActive(true);
     }
 
 }

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {
     public Button Back;
-    public GameObject StatusBtn;
-    public GameObject InventoryBtn;
     public GameObject InventoryMenu;
 
 
@@ -18,8 +16,7 @@ public class UIInventory : MonoBehaviour
 
     public void OnClickBack()
     {
-        StatusBtn.SetActive(true);
-        InventoryBtn.SetActive(true);
+        UIManager.instance.UIMainMenu.Buttons.SetActive(true);
         InventoryMenu.SetActive(false);
     }
 }
