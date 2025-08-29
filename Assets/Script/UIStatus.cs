@@ -12,6 +12,8 @@ public class UIStatus : MonoBehaviour
     [SerializeField] private Text HP;
     [SerializeField] private Text Critical;
 
+  
+
 
     void Start()
     {
@@ -22,6 +24,14 @@ public class UIStatus : MonoBehaviour
     {
         UIManager.instance.UIMainMenu.Buttons.SetActive(true);
         StatusMenu.SetActive(false);
+    }
+
+    public void CharInfo(Charater charater)
+    { 
+        Attack.text = charater.Attack.ToString();
+        Defense.text = charater.Defense.ToString();
+        HP.text = charater.HP.ToString();
+        Critical.text = charater.Critical.ToString();
     }
 
 }

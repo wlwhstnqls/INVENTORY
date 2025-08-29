@@ -9,6 +9,7 @@ public class UIMainMenu : MonoBehaviour
     public Button Status;
     public Button Inventory;
     public GameObject Buttons;
+    
 
     [SerializeField] private Text ID;
     [SerializeField] private Text Level;
@@ -35,4 +36,10 @@ public class UIMainMenu : MonoBehaviour
         UIManager.instance.UIInventory.InventoryMenu.SetActive(true);
     }
 
+    public void CharacterInfo(Charater charater)
+    { 
+        ID.text = charater.Name;
+        Level.text = charater.Level.ToString();
+        Gold.text = charater.Gold.ToString();
+    }
 }
